@@ -1,34 +1,30 @@
 //
-//  LoginViewController.swift
+//  AppNavigationViewController.swift
 //  cApp
 //
-//  Created by Andrew Connors on 2017-01-20.
+//  Created by Andrew Connors on 2017-01-21.
 //  Copyright © 2017 Andrew Connors. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class AppNavigationViewController: UIViewController {
 
-    @IBOutlet weak var loginInfoErrorLabel: UILabel!
-    
-    @IBOutlet weak var LoginButton: UIButton!
-    
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var userName: UITextField!
-    
-    var login = true
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var reportsButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var playerInfoButton: UIButton!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/eouzdiba.png")!)
-        let size:CGFloat = 75.0
-        LoginButton.bounds = CGRectMake(0,0,size,size)
-        loginInfoErrorLabel.hidden = true
-        LoginButton.layer.cornerRadius = size/2
-        LoginButton.layer.borderWidth = 1
+        reportsButton.setImage(UIImage(named: "pageicon.png"), forState: .Normal)
+        settingsButton.setImage(UIImage(named: "settings.png"), forState: .Normal)
+        playerInfoButton.setImage(UIImage(named: "conference.png"), forState: .Normal)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,14 +32,6 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func segueToNav(sender: UIButton) {
-        if(login){
-            self.performSegueWithIdentifier("loginToNav", sender: self);
-
-        }else{
-            loginInfoErrorLabel.hidden = false
-        }
-    }
 
     /*
     // MARK: - Navigation

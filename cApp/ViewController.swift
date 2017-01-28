@@ -14,6 +14,8 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
     
     @IBOutlet weak var deviceLabel: UILabel!
     
+    @IBOutlet weak var badJumps: UILabel!
+    @IBOutlet weak var goodJumps: UILabel!
     @IBOutlet weak var chartView: LineChartView!
     @IBOutlet weak var startScan: UIButton!
     
@@ -22,27 +24,37 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
     var arduino:CBPeripheral?
     var arduinoData: CBCharacteristic?
     let arduinoName = "BLE_SHD"
-    var bgImage     = UIImage(named: "icerink.png");
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let imageView   = UIImageView(frame: self.view.bounds);
-        imageView.image = bgImage
-        self.view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
+        
         deviceLabel!.text = "Not Working"
         startScan.enabled = false
         central_Manager = CBCentralManager(delegate: self, queue: nil)
-        
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/eouzdiba.png")!)
+        chartView.backgroundColor = UIColor(patternImage: UIImage(named: "images/eouzdiba.png")!)
         createChartSets()
-        
+        chartView.alpha = 0.9
         chartView.noDataText = "You need to set some data points for the chart."
         self.chartView.delegate = self
         chartView.dragEnabled = true
         chartView.scaleXEnabled = true
+        
+        let size:CGFloat = 120.0
+        
+        goodJumps.bounds = CGRectMake(0.0, 0.0, size, size)
+        goodJumps.layer.cornerRadius = size / 2
+        goodJumps.layer.borderWidth = 3.0
+        goodJumps.layer.backgroundColor = UIColor.clearColor().CGColor
+        goodJumps.layer.borderColor = UIColor.greenColor().CGColor
+        
+        badJumps.bounds = CGRectMake(0.0, 0.0, size, size)
+        badJumps.layer.cornerRadius = size / 2
+        badJumps.layer.borderWidth = 3.0
+        badJumps.layer.backgroundColor = UIColor.clearColor().CGColor
+        badJumps.layer.borderColor = UIColor.redColor().CGColor
         
         //var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(ViewController.plotPoint), userInfo: nil, repeats: true)
 
