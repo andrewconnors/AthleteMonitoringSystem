@@ -247,7 +247,7 @@
 				TargetAttributes = {
 					847A9B801DBA8CF100546ED7 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = V98E8CKPYL;
+						DevelopmentTeam = 5M5YN86W3L;
 						ProvisioningStyle = Automatic;
 					};
 					847A9B941DBA8CF100546ED7 = {
@@ -593,11 +593,11 @@
 			baseConfigurationReference = 10C2300C5FF7FC3E9614A0A0 /* Pods-cApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V98E8CKPYL;
+				DEVELOPMENT_TEAM = 5M5YN86W3L;
 				INFOPLIST_FILE = cApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.3437904.cApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmurphy.cApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -608,11 +608,11 @@
 			baseConfigurationReference = D6B21864633887C4ED1C398D /* Pods-cApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V98E8CKPYL;
+				DEVELOPMENT_TEAM = 5M5YN86W3L;
 				INFOPLIST_FILE = cApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.3437904.cApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmurphy.cApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
