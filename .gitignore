@@ -1,0 +1,77 @@
+Skip to content
+Personal Open source Business Explore
+Sign upSign inPricingBlogSupport
+This repository
+Search
+ Watch 1,955  Star 45,720  Fork 18,820 github/gitignore
+ Code  Pull requests 192  Projects 0  Pulse  Graphs
+Branch: master Find file Copy pathgitignore/Objective-C.gitignore
+d7df566  on Dec 9, 2016
+@shiftkey shiftkey Revert "添加DS_Store"
+46 contributors @KrauseFx @arcresu @jspahrsummers @kylef @shiftkey @pingwinator @msgerbush @czechboy0 @Coeur @modocache @aroben @stig @soffes @riosc @wolffan @peat @osteslag @OliverLetterer @nrbrook @intabulas @MinJunKweon @stuffmc @matzew @yanniks @rentzsch @victorgama and others
+RawBlameHistory
+63 lines (51 sloc)  1.35 KB
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xcuserstate
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+# Pods/
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Code Injection
+#
+# After new code Injection tools there's a generated folder /iOSInjectionProject
+# https://github.com/johnno1962/injectionforxcode
+
+iOSInjectionProject/
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help

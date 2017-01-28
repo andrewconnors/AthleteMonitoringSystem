@@ -12,18 +12,21 @@ import CoreBluetooth
 
 class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDelegate, CBPeripheralDelegate {
     
+    @IBOutlet weak var goodJumps: UILabel!
     @IBOutlet weak var deviceLabel: UILabel!
     
-    @IBOutlet weak var badJumps: UILabel!
-    @IBOutlet weak var goodJumps: UILabel!
     @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var badJumps: UILabel!
     @IBOutlet weak var startScan: UIButton!
+    
+    @IBOutlet weak var dataLabel: UILabel!
     
     //CB Variables
     var central_Manager:CBCentralManager!
     var arduino:CBPeripheral?
     var arduinoData: CBCharacteristic?
-    let arduinoName = "BLE_SHD"
+    let arduinoName = "MPU NUS"
+    var bgImage     = UIImage(named: "icerink.png");
     
 
     override func viewDidLoad() {
@@ -66,16 +69,12 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-   
-    
     var count = 0
-    func plotPoint(dataPoint: NSData){
-        let newDataPoint = Double(arc4random_uniform(10) + 1)
-        let newDataPoint2 = Double(arc4random_uniform(10) + 1)
+    
+    func plotPoint(dataPoint: Double, y: Double) {
+        let newDataPoint = dataPoint
+        let newDataPoint2 = y
 
-        
         chartView.data?.addEntry(ChartDataEntry(value: newDataPoint, xIndex: count), dataSetIndex: 0)
         chartView.data?.addEntry(ChartDataEntry(value: newDataPoint2, xIndex: count), dataSetIndex: 1)
         chartView.data?.addXValue(String(count))
@@ -155,7 +154,7 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
         print("***Connected!!")
         
         deviceLabel!.text = "CONNECTED!!!"
-        
+        arduino?.discoverServices(nil)
     }
     
     func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
@@ -165,7 +164,7 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
         }
         
         if let services = peripheral.services{
-            for service in services{
+            for service in services {
                 print("dicovered service: \(service)");
                 //if specific service found{
                 peripheral.discoverCharacteristics(nil, forService: service)
@@ -181,6 +180,10 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
         
         if let characteristics = service.characteristics{
             for characteristic in characteristics{
+                if characteristic.UUID == CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E") {
+                    self.arduino?.setNotifyValue(true, forCharacteristic: characteristic)
+                }
+                
                 print("Characteristic: \(characteristic)");
             }
         }
@@ -192,10 +195,27 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
             return
         }
         
+        var count: UInt32 = 0;
+        
+        characteristic.value?.getBytes(&count, length: sizeof(UInt32))
+        
+//        let data = NSData(bytes: count, length: count.count * sizeof(UInt32))
+//        let myString = NSString(data: data, encoding: NSUTF32LittleEndianStringEncoding) as! String
+        
+        
+        let datastring = NSString(data: characteristic.value!, encoding: NSUTF8StringEncoding)
+        print(datastring)
+        
+        dataLabel.text = datastring as! String
+        
+        let dataArr = datastring?.componentsSeparatedByString(";")
+        let acclX = Double((dataArr?[0])!)
+        let acclY = Double((dataArr?[1])!)
+        plotPoint(acclX!, y: acclY!)
         //This is where you're going to get a value to plot
-        if let dataPoint = characteristic.value{
-            plotPoint(dataPoint);
-        }
+//        if let dataPoint = characteristic.value{
+//            plotPoint(dataPoint);
+//        }
         
         
     }
