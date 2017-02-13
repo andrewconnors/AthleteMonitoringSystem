@@ -19,16 +19,27 @@ class LoginViewController: UIViewController {
     
     var login = true
     
+    @IBOutlet weak var practiceLogo: UIImageView!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/eouzdiba.png")!)
-        let size:CGFloat = 75.0
-        LoginButton.bounds = CGRectMake(0,0,size,size)
+        
         loginInfoErrorLabel.hidden = true
-        LoginButton.layer.cornerRadius = size/2
         LoginButton.layer.borderWidth = 1
+        practiceLogo.image = UIImage(named: "images/temp_logo.png");
+        let border = CALayer()
+        let width = CGFloat(2.0)
+        border.borderColor = UIColor.darkGrayColor().CGColor
+        border.frame = CGRect(x: 0, y: userName.frame.size.height - width, width:  userName.frame.size.width, height: userName.frame.size.height)
+        
+        border.borderWidth = width
+        userName.layer.addSublayer(border)
+        userName.layer.masksToBounds = true
+        
+        password.layer.addSublayer(border)
+        password.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

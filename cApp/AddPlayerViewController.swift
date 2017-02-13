@@ -14,7 +14,6 @@ class AddPlayerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/eouzdiba.png")!)
     }
 
     override func didReceiveMemoryWarning() {

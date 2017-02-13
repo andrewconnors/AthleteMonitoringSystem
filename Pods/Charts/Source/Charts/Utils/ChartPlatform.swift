@@ -470,17 +470,6 @@ types are aliased to either their UI* implementation (on iOS) or their NS* imple
 		}
 	}
 
-	extension NSTouch
-    {
-		/** Touch locations on OS X are relative to the trackpad, whereas on iOS they are actually *on* the view. */
-		func locationInView(view: NSView) -> NSPoint
-        {
-			let n = self.normalizedPosition
-			let b = view.bounds
-			return NSPoint(x: b.origin.x + b.size.width * n.x, y: b.origin.y + b.size.height * n.y)
-		}
-	}
-
 	extension NSScrollView
     {
 		var scrollEnabled: Bool
@@ -520,7 +509,7 @@ types are aliased to either their UI* implementation (on iOS) or their NS* imple
 		image.lockFocus()
 		let rep = NSBitmapImageRep(focusedViewRect: NSMakeRect(0, 0, image.size.width, image.size.height))
 		image.unlockFocus()
-		return rep?.representationUsingType(.JPEG, properties: [:])
+		return rep?.representationUsingType(.PNG, properties: [:])
 	}
 
 	func NSUIImageJPEGRepresentation(image: NSUIImage, _ quality: CGFloat = 0.9) -> NSData?

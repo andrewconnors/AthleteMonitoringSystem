@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		210DA69FDCBA6E5F2C025132 /* Pods_cApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67EBA586A5B94D6F874CE811 /* Pods_cApp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		331186291FD63860B1FF22B9 /* Pods_cAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527DABB90CDD0883F3182C82 /* Pods_cAppUITests.framework */; };
+		841F9D5D1E4F71C300FF95F7 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F9D5C1E4F71C300FF95F7 /* RealmDatabase.swift */; };
+		841F9D5F1E4F737500FF95F7 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F9D5E1E4F737500FF95F7 /* Athlete.swift */; };
+		842E1E9C1E50CC7E00B02360 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E1E9B1E50CC7E00B02360 /* Sensor.swift */; };
 		847A9B851DBA8CF100546ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A9B841DBA8CF100546ED7 /* AppDelegate.swift */; };
 		847A9B871DBA8CF100546ED7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A9B861DBA8CF100546ED7 /* ViewController.swift */; };
 		847A9B8A1DBA8CF100546ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847A9B881DBA8CF100546ED7 /* Main.storyboard */; };
@@ -54,6 +57,9 @@
 		527DABB90CDD0883F3182C82 /* Pods_cAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		621E44A5DC725F87BA6264B6 /* Pods-cAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cAppUITests/Pods-cAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67EBA586A5B94D6F874CE811 /* Pods_cApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		841F9D5C1E4F71C300FF95F7 /* RealmDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
+		841F9D5E1E4F737500FF95F7 /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
+		842E1E9B1E50CC7E00B02360 /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		847A9B811DBA8CF100546ED7 /* cApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847A9B841DBA8CF100546ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847A9B861DBA8CF100546ED7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 				847A9B8B1DBA8CF100546ED7 /* Assets.xcassets */,
 				847A9B8D1DBA8CF100546ED7 /* LaunchScreen.storyboard */,
 				847A9B901DBA8CF100546ED7 /* Info.plist */,
+				841F9D5C1E4F71C300FF95F7 /* RealmDatabase.swift */,
+				841F9D5E1E4F737500FF95F7 /* Athlete.swift */,
+				842E1E9B1E50CC7E00B02360 /* Sensor.swift */,
 			);
 			path = cApp;
 			sourceTree = "<group>";
@@ -205,12 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 847A9BA91DBA8CF100546ED7 /* Build configuration list for PBXNativeTarget "cApp" */;
 			buildPhases = (
-				E0619D4B8E706F9D7729F5E0 /* 📦 Check Pods Manifest.lock */,
+				E0619D4B8E706F9D7729F5E0 /* [CP] Check Pods Manifest.lock */,
 				847A9B7D1DBA8CF100546ED7 /* Sources */,
 				847A9B7E1DBA8CF100546ED7 /* Frameworks */,
 				847A9B7F1DBA8CF100546ED7 /* Resources */,
-				A0D0CF5E817F571BE1A2A37C /* 📦 Embed Pods Frameworks */,
-				AAF454ED0099E1F2605BE624 /* 📦 Copy Pods Resources */,
+				A0D0CF5E817F571BE1A2A37C /* [CP] Embed Pods Frameworks */,
+				AAF454ED0099E1F2605BE624 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,12 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 847A9BAC1DBA8CF100546ED7 /* Build configuration list for PBXNativeTarget "cAppTests" */;
 			buildPhases = (
-				10CECF84A22C5410E47730FA /* 📦 Check Pods Manifest.lock */,
+				10CECF84A22C5410E47730FA /* [CP] Check Pods Manifest.lock */,
 				847A9B911DBA8CF100546ED7 /* Sources */,
 				847A9B921DBA8CF100546ED7 /* Frameworks */,
 				847A9B931DBA8CF100546ED7 /* Resources */,
-				961AE3218E76F505CACD6804 /* 📦 Embed Pods Frameworks */,
-				7D969B49E1D2958F76588A0A /* 📦 Copy Pods Resources */,
+				961AE3218E76F505CACD6804 /* [CP] Embed Pods Frameworks */,
+				7D969B49E1D2958F76588A0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,11 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 847A9BAF1DBA8CF100546ED7 /* Build configuration list for PBXNativeTarget "cAppUITests" */;
 			buildPhases = (
-				EF217FA2FDEC152BFF91B8ED /* 📦 Check Pods Manifest.lock */,
+				EF217FA2FDEC152BFF91B8ED /* [CP] Check Pods Manifest.lock */,
 				847A9B9C1DBA8CF100546ED7 /* Sources */,
 				847A9B9D1DBA8CF100546ED7 /* Frameworks */,
 				847A9B9E1DBA8CF100546ED7 /* Resources */,
-				02DCADD9CE6A49C83707AC68 /* 📦 Copy Pods Resources */,
+				02DCADD9CE6A49C83707AC68 /* [CP] Copy Pods Resources */,
+				3F539E89BF8A4D4B365ED2F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,7 +284,7 @@
 				TargetAttributes = {
 					847A9B801DBA8CF100546ED7 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 5M5YN86W3L;
+						DevelopmentTeam = V98E8CKPYL;
 						ProvisioningStyle = Automatic;
 					};
 					847A9B941DBA8CF100546ED7 = {
@@ -343,14 +353,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02DCADD9CE6A49C83707AC68 /* 📦 Copy Pods Resources */ = {
+		02DCADD9CE6A49C83707AC68 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,29 +368,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cAppUITests/Pods-cAppUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		10CECF84A22C5410E47730FA /* 📦 Check Pods Manifest.lock */ = {
+		10CECF84A22C5410E47730FA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7D969B49E1D2958F76588A0A /* 📦 Copy Pods Resources */ = {
+		3F539E89BF8A4D4B365ED2F2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cAppUITests/Pods-cAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D969B49E1D2958F76588A0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,14 +413,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cAppTests/Pods-cAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		961AE3218E76F505CACD6804 /* 📦 Embed Pods Frameworks */ = {
+		961AE3218E76F505CACD6804 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,14 +428,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cAppTests/Pods-cAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A0D0CF5E817F571BE1A2A37C /* 📦 Embed Pods Frameworks */ = {
+		A0D0CF5E817F571BE1A2A37C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,14 +443,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cApp/Pods-cApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AAF454ED0099E1F2605BE624 /* 📦 Copy Pods Resources */ = {
+		AAF454ED0099E1F2605BE624 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,34 +458,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cApp/Pods-cApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0619D4B8E706F9D7729F5E0 /* 📦 Check Pods Manifest.lock */ = {
+		E0619D4B8E706F9D7729F5E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		EF217FA2FDEC152BFF91B8ED /* 📦 Check Pods Manifest.lock */ = {
+		EF217FA2FDEC152BFF91B8ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -471,11 +496,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B894EA1E38199C00E4B0DA /* PlayerStatsViewController.swift in Sources */,
+				842E1E9C1E50CC7E00B02360 /* Sensor.swift in Sources */,
 				8484BDA11E33C81F00D9AC17 /* AppNavigationViewController.swift in Sources */,
 				84B894E81E380F9A00E4B0DA /* AddPlayerViewController.swift in Sources */,
 				84E3537D1E32DC8000B51222 /* LoginViewController.swift in Sources */,
+				841F9D5D1E4F71C300FF95F7 /* RealmDatabase.swift in Sources */,
 				84B894E61E380F6C00E4B0DA /* PlayerListViewController.swift in Sources */,
 				847A9B871DBA8CF100546ED7 /* ViewController.swift in Sources */,
+				841F9D5F1E4F737500FF95F7 /* Athlete.swift in Sources */,
 				847A9B851DBA8CF100546ED7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,7 +657,7 @@
 			baseConfigurationReference = 10C2300C5FF7FC3E9614A0A0 /* Pods-cApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5M5YN86W3L;
+				DEVELOPMENT_TEAM = V98E8CKPYL;
 				INFOPLIST_FILE = cApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -644,7 +672,7 @@
 			baseConfigurationReference = D6B21864633887C4ED1C398D /* Pods-cApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5M5YN86W3L;
+				DEVELOPMENT_TEAM = V98E8CKPYL;
 				INFOPLIST_FILE = cApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -664,7 +692,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3437904.cAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cApp.app/cApp";
 			};
 			name = Debug;
@@ -679,7 +707,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3437904.cAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cApp.app/cApp";
 			};
 			name = Release;
@@ -693,7 +721,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3437904.cAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = cApp;
 			};
 			name = Debug;
@@ -707,7 +735,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.3437904.cAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = cApp;
 			};
 			name = Release;

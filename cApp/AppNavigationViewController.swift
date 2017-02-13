@@ -10,20 +10,13 @@ import UIKit
 
 class AppNavigationViewController: UIViewController {
 
-    @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var reportsButton: UIButton!
-    @IBOutlet weak var settingsButton: UIButton!
-    @IBOutlet weak var playerInfoButton: UIButton!
     
+    @IBOutlet weak var playButton: UIButton!
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/eouzdiba.png")!)
-        reportsButton.setImage(UIImage(named: "pageicon.png"), forState: .Normal)
-        settingsButton.setImage(UIImage(named: "settings.png"), forState: .Normal)
-        playerInfoButton.setImage(UIImage(named: "conference.png"), forState: .Normal)
         
     }
 

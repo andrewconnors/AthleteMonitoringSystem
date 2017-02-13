@@ -36,8 +36,6 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
         deviceLabel!.text = "Not Working"
         startScan.enabled = false
         central_Manager = CBCentralManager(delegate: self, queue: nil)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "images/eouzdiba.png")!)
-        chartView.backgroundColor = UIColor(patternImage: UIImage(named: "images/eouzdiba.png")!)
         createChartSets()
         chartView.alpha = 0.9
         chartView.noDataText = "You need to set some data points for the chart."

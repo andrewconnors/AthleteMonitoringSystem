@@ -7,6 +7,7 @@ target 'cApp' do
 
   # Pods for cApp
   pod 'Charts', '~>2.3.0'
+  pod 'RealmSwift', '~>1.1.0'
 
   target 'cAppTests' do
     inherit! :search_paths
