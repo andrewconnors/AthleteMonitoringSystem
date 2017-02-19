@@ -8,9 +8,9 @@
 
 import UIKit
 import Charts
-import CoreBluetooth
+//import bluetooth functionality?
 
-class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDelegate, CBPeripheralDelegate {
+class ViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var goodJumps: UILabel!
     @IBOutlet weak var deviceLabel: UILabel!
@@ -22,10 +22,7 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
     @IBOutlet weak var dataLabel: UILabel!
     
     //CB Variables
-    var central_Manager:CBCentralManager!
-    var arduino:CBPeripheral?
-    var arduinoData: CBCharacteristic?
-    let arduinoName = "MPU NUS"
+    let bleController = Bluetooth(name: "MPU NUS")
     var bgImage     = UIImage(named: "icerink.png");
     
 
@@ -35,7 +32,7 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
         
         deviceLabel!.text = "Not Working"
         startScan.enabled = false
-        central_Manager = CBCentralManager(delegate: self, queue: nil)
+        
         createChartSets()
         chartView.alpha = 0.9
         chartView.noDataText = "You need to set some data points for the chart."
@@ -56,6 +53,9 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
         badJumps.layer.borderWidth = 3.0
         badJumps.layer.backgroundColor = UIColor.clearColor().CGColor
         badJumps.layer.borderColor = UIColor.redColor().CGColor
+        
+        //Get state of bluetooth controller
+        getBluetoothState()
         
         //var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(ViewController.plotPoint), userInfo: nil, repeats: true)
 
@@ -105,118 +105,30 @@ class ViewController: UIViewController, ChartViewDelegate, CBCentralManagerDeleg
     @IBAction func toggleScan(sender: UIButton) {
         if(startScan.currentTitle == "Start Scan"){
             startScan.setTitle("Stop Scan", forState: .Normal)
-            central_Manager.scanForPeripheralsWithServices(nil, options: nil)
+            bleController.startScan();
+            
         }else if(startScan.currentTitle == "Stop Scan"){
             startScan.setTitle("Start Scan", forState: .Normal)
-            central_Manager.stopScan()
+            bleController.stopScan()
         }
     }
     
-    //MARK- CBCentralManager methods
-    
-    func centralManagerDidUpdateState(central: CBCentralManager) {
-        switch central.state {
-        case .PoweredOff:
-            deviceLabel!.text = "Bluetooth on this device is currently powered off."
-        case .Unsupported:
-            deviceLabel!.text = "This device does not support Bluetooth Low Energy."
-        case .Unauthorized:
-            deviceLabel!.text = "This app is not authorized to use Bluetooth Low Energy."
-        case .Resetting:
-            deviceLabel!.text = "The BLE Manager is resetting; a state update is pending."
-        case .Unknown:
-            deviceLabel!.text = "The state of the BLE Manager is unknown."
-        case .PoweredOn:
-            startScan.enabled = true
-            deviceLabel!.text = "BLE Good To Go"
-        }
-   }
-    
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        if let peripheralName = advertisementData[CBAdvertisementDataLocalNameKey] as? String {
-            print("Next Peripheral Name: \(peripheralName)")
-            print("It's UUID: \(peripheral.identifier.UUIDString)")
-            
-            if (peripheralName == arduinoName){
-                print("THAR SHE BLOWS!")
-                arduino = peripheral
-                arduino!.delegate = self
-                central_Manager.connectPeripheral(arduino!, options: nil)
-            }
-        }
-    }
-        
-        
-    
-    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
-        print("***Connected!!")
-        
-        deviceLabel!.text = "CONNECTED!!!"
-        arduino?.discoverServices(nil)
-    }
-    
-    func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
-        if(error != nil){
-            print("Error discovering characteristics");
-            return
-        }
-        
-        if let services = peripheral.services{
-            for service in services {
-                print("dicovered service: \(service)");
-                //if specific service found{
-                peripheral.discoverCharacteristics(nil, forService: service)
-            }
+    func getBluetoothState(){
+        if(bleController.getState() == "PoweredOn"){
+            startScan.enabled = true;
+        }else{
+            deviceLabel!.text = bleController.getMessage();
         }
     }
     
-    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
-        if(error != nil){
-            print("Error discovering characteristics: \(error?.localizedDescription)");
-            return
-        }
-        
-        if let characteristics = service.characteristics{
-            for characteristic in characteristics{
-                if characteristic.UUID == CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E") {
-                    self.arduino?.setNotifyValue(true, forCharacteristic: characteristic)
-                }
-                
-                print("Characteristic: \(characteristic)");
-            }
-        }
-    }
     
-    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
-        if(error != nil){
-            print("Error updating value for characteristic: \(error?.localizedDescription)");
-            return
-        }
-        
-        var count: UInt32 = 0;
-        
-        characteristic.value?.getBytes(&count, length: sizeof(UInt32))
-        
-//        let data = NSData(bytes: count, length: count.count * sizeof(UInt32))
-//        let myString = NSString(data: data, encoding: NSUTF32LittleEndianStringEncoding) as! String
+    
+    
         
         
-        let datastring = NSString(data: characteristic.value!, encoding: NSUTF8StringEncoding)
-        print(datastring)
-        
-        dataLabel.text = datastring as! String
-        
-        let dataArr = datastring?.componentsSeparatedByString(";")
-        let acclX = Double((dataArr?[0])!)
-        let acclY = Double((dataArr?[1])!)
-        plotPoint(acclX!, y: acclY!)
-        //This is where you're going to get a value to plot
-//        if let dataPoint = characteristic.value{
-//            plotPoint(dataPoint);
-//        }
-        
-        
-    }
+    
+    
+    
     
     
         

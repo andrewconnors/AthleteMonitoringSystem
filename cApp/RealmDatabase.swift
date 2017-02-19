@@ -16,7 +16,7 @@ class DBPlayer: Object{
     let age: Int = 0
     let weight: Double = 0
     let height: Double = 0
-    //let sensors = List<Sensor>()
+    let sensors = List<DBSensor>()
 }
 
 class DBSensor: Object{
@@ -55,6 +55,12 @@ class Database{
         }
         
         return false
+    }
+    
+    func playerCount() -> Int{
+        let results = realm.objects(DBPlayer.self).filter("@count")
+        
+        return results.count
     }
     
     

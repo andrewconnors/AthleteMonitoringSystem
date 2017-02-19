@@ -12,6 +12,7 @@
 		841F9D5D1E4F71C300FF95F7 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F9D5C1E4F71C300FF95F7 /* RealmDatabase.swift */; };
 		841F9D5F1E4F737500FF95F7 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F9D5E1E4F737500FF95F7 /* Athlete.swift */; };
 		842E1E9C1E50CC7E00B02360 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E1E9B1E50CC7E00B02360 /* Sensor.swift */; };
+		842E1E9E1E59FE5200B02360 /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E1E9D1E59FE5200B02360 /* Bluetooth.swift */; };
 		847A9B851DBA8CF100546ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A9B841DBA8CF100546ED7 /* AppDelegate.swift */; };
 		847A9B871DBA8CF100546ED7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A9B861DBA8CF100546ED7 /* ViewController.swift */; };
 		847A9B8A1DBA8CF100546ED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847A9B881DBA8CF100546ED7 /* Main.storyboard */; };
@@ -20,14 +21,9 @@
 		847A9B9A1DBA8CF100546ED7 /* cAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A9B991DBA8CF100546ED7 /* cAppTests.swift */; };
 		847A9BA51DBA8CF100546ED7 /* cAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A9BA41DBA8CF100546ED7 /* cAppUITests.swift */; };
 		8484BDA11E33C81F00D9AC17 /* AppNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484BDA01E33C81F00D9AC17 /* AppNavigationViewController.swift */; };
-		84B894E11E358A9700E4B0DA /* basketballBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84B894DD1E358A9700E4B0DA /* basketballBackground.jpg */; };
-		84B894E21E358A9700E4B0DA /* Conference Background Selected Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B894DE1E358A9700E4B0DA /* Conference Background Selected Filled-50.png */; };
-		84B894E31E358A9700E4B0DA /* icerink.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B894DF1E358A9700E4B0DA /* icerink.png */; };
-		84B894E41E358A9700E4B0DA /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B894E01E358A9700E4B0DA /* Settings-50.png */; };
 		84B894E61E380F6C00E4B0DA /* PlayerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B894E51E380F6C00E4B0DA /* PlayerListViewController.swift */; };
 		84B894E81E380F9A00E4B0DA /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B894E71E380F9A00E4B0DA /* AddPlayerViewController.swift */; };
 		84B894EA1E38199C00E4B0DA /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B894E91E38199C00E4B0DA /* PlayerStatsViewController.swift */; };
-		84B894EC1E38389600E4B0DA /* pageicon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B894EB1E38389600E4B0DA /* pageicon copy.png */; };
 		84D47F4B1E39610700EB45B2 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 84D47F4A1E39610700EB45B2 /* images */; };
 		84E3537D1E32DC8000B51222 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3537C1E32DC8000B51222 /* LoginViewController.swift */; };
 		E9C89E0E29CE7B9632F381DC /* Pods_cAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B01376251A98C64B3C3641 /* Pods_cAppTests.framework */; };
@@ -60,6 +56,7 @@
 		841F9D5C1E4F71C300FF95F7 /* RealmDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		841F9D5E1E4F737500FF95F7 /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
 		842E1E9B1E50CC7E00B02360 /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		842E1E9D1E59FE5200B02360 /* Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
 		847A9B811DBA8CF100546ED7 /* cApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847A9B841DBA8CF100546ED7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847A9B861DBA8CF100546ED7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,14 +71,9 @@
 		847A9BA41DBA8CF100546ED7 /* cAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cAppUITests.swift; sourceTree = "<group>"; };
 		847A9BA61DBA8CF100546ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8484BDA01E33C81F00D9AC17 /* AppNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationViewController.swift; sourceTree = "<group>"; };
-		84B894DD1E358A9700E4B0DA /* basketballBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = basketballBackground.jpg; path = images/basketballBackground.jpg; sourceTree = "<group>"; };
-		84B894DE1E358A9700E4B0DA /* Conference Background Selected Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Conference Background Selected Filled-50.png"; path = "images/Conference Background Selected Filled-50.png"; sourceTree = "<group>"; };
-		84B894DF1E358A9700E4B0DA /* icerink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icerink.png; path = images/icerink.png; sourceTree = "<group>"; };
-		84B894E01E358A9700E4B0DA /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings-50.png"; path = "images/Settings-50.png"; sourceTree = "<group>"; };
 		84B894E51E380F6C00E4B0DA /* PlayerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListViewController.swift; sourceTree = "<group>"; };
 		84B894E71E380F9A00E4B0DA /* AddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
 		84B894E91E38199C00E4B0DA /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
-		84B894EB1E38389600E4B0DA /* pageicon copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pageicon copy.png"; path = "images/pageicon copy.png"; sourceTree = "<group>"; };
 		84D47F4A1E39610700EB45B2 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		84E3537C1E32DC8000B51222 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9F123CE8C5FB23620DDCCB48 /* Pods-cAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cAppUITests/Pods-cAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +122,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		842E1E9F1E5A08FC00B02360 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				841F9D5E1E4F737500FF95F7 /* Athlete.swift */,
+				842E1E9B1E50CC7E00B02360 /* Sensor.swift */,
+				842E1E9D1E59FE5200B02360 /* Bluetooth.swift */,
+				841F9D5C1E4F71C300FF95F7 /* RealmDatabase.swift */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		842E1EA11E5A092D00B02360 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				847A9B861DBA8CF100546ED7 /* ViewController.swift */,
+				84B894E91E38199C00E4B0DA /* PlayerStatsViewController.swift */,
+				84B894E51E380F6C00E4B0DA /* PlayerListViewController.swift */,
+				84B894E71E380F9A00E4B0DA /* AddPlayerViewController.swift */,
+				8484BDA01E33C81F00D9AC17 /* AppNavigationViewController.swift */,
+				84E3537C1E32DC8000B51222 /* LoginViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		847A9B781DBA8CF100546ED7 = {
 			isa = PBXGroup;
 			children = (
@@ -155,26 +171,14 @@
 		847A9B831DBA8CF100546ED7 /* cApp */ = {
 			isa = PBXGroup;
 			children = (
+				842E1E9F1E5A08FC00B02360 /* src */,
 				84D47F4A1E39610700EB45B2 /* images */,
-				84B894EB1E38389600E4B0DA /* pageicon copy.png */,
-				84B894DD1E358A9700E4B0DA /* basketballBackground.jpg */,
-				84B894DE1E358A9700E4B0DA /* Conference Background Selected Filled-50.png */,
-				84B894DF1E358A9700E4B0DA /* icerink.png */,
-				84B894E01E358A9700E4B0DA /* Settings-50.png */,
-				847A9B841DBA8CF100546ED7 /* AppDelegate.swift */,
-				847A9B861DBA8CF100546ED7 /* ViewController.swift */,
+				842E1EA11E5A092D00B02360 /* controller */,
 				847A9B881DBA8CF100546ED7 /* Main.storyboard */,
-				84B894E91E38199C00E4B0DA /* PlayerStatsViewController.swift */,
-				84B894E51E380F6C00E4B0DA /* PlayerListViewController.swift */,
-				84B894E71E380F9A00E4B0DA /* AddPlayerViewController.swift */,
-				8484BDA01E33C81F00D9AC17 /* AppNavigationViewController.swift */,
-				84E3537C1E32DC8000B51222 /* LoginViewController.swift */,
+				847A9B841DBA8CF100546ED7 /* AppDelegate.swift */,
 				847A9B8B1DBA8CF100546ED7 /* Assets.xcassets */,
 				847A9B8D1DBA8CF100546ED7 /* LaunchScreen.storyboard */,
 				847A9B901DBA8CF100546ED7 /* Info.plist */,
-				841F9D5C1E4F71C300FF95F7 /* RealmDatabase.swift */,
-				841F9D5E1E4F737500FF95F7 /* Athlete.swift */,
-				842E1E9B1E50CC7E00B02360 /* Sensor.swift */,
 			);
 			path = cApp;
 			sourceTree = "<group>";
@@ -325,13 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D47F4B1E39610700EB45B2 /* images in Resources */,
-				84B894E41E358A9700E4B0DA /* Settings-50.png in Resources */,
-				84B894E11E358A9700E4B0DA /* basketballBackground.jpg in Resources */,
 				847A9B8F1DBA8CF100546ED7 /* LaunchScreen.storyboard in Resources */,
 				847A9B8C1DBA8CF100546ED7 /* Assets.xcassets in Resources */,
-				84B894E31E358A9700E4B0DA /* icerink.png in Resources */,
-				84B894EC1E38389600E4B0DA /* pageicon copy.png in Resources */,
-				84B894E21E358A9700E4B0DA /* Conference Background Selected Filled-50.png in Resources */,
 				847A9B8A1DBA8CF100546ED7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +496,7 @@
 			files = (
 				84B894EA1E38199C00E4B0DA /* PlayerStatsViewController.swift in Sources */,
 				842E1E9C1E50CC7E00B02360 /* Sensor.swift in Sources */,
+				842E1E9E1E59FE5200B02360 /* Bluetooth.swift in Sources */,
 				8484BDA11E33C81F00D9AC17 /* AppNavigationViewController.swift in Sources */,
 				84B894E81E380F9A00E4B0DA /* AddPlayerViewController.swift in Sources */,
 				84E3537D1E32DC8000B51222 /* LoginViewController.swift in Sources */,
