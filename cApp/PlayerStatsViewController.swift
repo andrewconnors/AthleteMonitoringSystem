@@ -10,9 +10,13 @@ import UIKit
 
 class PlayerStatsViewController: UIViewController {
 
+    @IBOutlet weak var barChartImagePlaceholder: UIImageView!
+    @IBOutlet weak var pieChartImagePlaceholder: UIImageView!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        barChartImagePlaceholder.image = UIImage(named: "images/combined_chart.png")
+        pieChartImagePlaceholder.image = UIImage(named: "images/pie_chart-512.png")
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +26,9 @@ class PlayerStatsViewController: UIViewController {
     }
     
 
+    @IBAction func backToPlayerList(sender: AnyObject) {
+        self.performSegueWithIdentifier("playerScreenToPlayerList", sender: self)
+    }
     /*
     // MARK: - Navigation
 

@@ -12,12 +12,18 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginInfoErrorLabel: UILabel!
     
+    @IBOutlet weak var passwordImageView: UIImageView!
+    
+    @IBOutlet weak var usernameImageView: UIImageView!
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var LoginButton: UIButton!
     
+    @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var userName: UITextField!
     
     var login = true
+    var usernameImage = UIImage(named: "images/username_icon.png") //NEED TO IMPORT THIS
+    var passwordImage = UIImage(named: "images/password_lock_icon.png") //THIS AS WELL
     
     @IBOutlet weak var practiceLogo: UIImageView!
     
@@ -25,21 +31,23 @@ class LoginViewController: UIViewController {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        userImage.image = UIImage(named: "images/user_icon_circle.png")
+        practiceLogo.image = UIImage(named: "images/temp_logo.png");
         
+        username.leftViewMode = UITextFieldViewMode.Always
+        password.leftViewMode = UITextFieldViewMode.Always
+        
+        usernameImageView.image = usernameImage
+        passwordImageView.image = passwordImage
+        
+        username.leftView = usernameImageView
+        password.leftView = passwordImageView
+        
+        self.view.backgroundColor = UIColor(red:0.31, green:0.36, blue:0.46, alpha:1.0);
         loginInfoErrorLabel.hidden = true
         LoginButton.layer.borderWidth = 1
-        practiceLogo.image = UIImage(named: "images/temp_logo.png");
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.darkGrayColor().CGColor
-        border.frame = CGRect(x: 0, y: userName.frame.size.height - width, width:  userName.frame.size.width, height: userName.frame.size.height)
         
-        border.borderWidth = width
-        userName.layer.addSublayer(border)
-        userName.layer.masksToBounds = true
         
-        password.layer.addSublayer(border)
-        password.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

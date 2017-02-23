@@ -9,12 +9,11 @@
 import UIKit
 
 class PlayerListViewController: UIViewController {
-
+    var database = Database();
     @IBOutlet weak var playerTable: UITableView!
     @IBOutlet weak var addPlayerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -24,8 +23,7 @@ class PlayerListViewController: UIViewController {
     }
     
 
-    @IBAction func addPlayerToList() {
-    }
+    
     /*
     // MARK: - Navigation
 

@@ -9,16 +9,24 @@
 import UIKit
 
 class AddPlayerViewController: UIViewController {
-
+    var database = Database()
+    @IBOutlet weak var addPlayerButton: UIButton!
+    @IBOutlet weak var playerPicture: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        playerPicture.image = UIImage(named: "images/player_silhouette.png");
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func addPlayerToDatabase(sender: AnyObject) {
+        var newPlayer: Athlete = createAthleteFromFieldElements()
     }
     
 
