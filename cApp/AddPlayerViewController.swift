@@ -25,9 +25,9 @@ class AddPlayerViewController: UIViewController {
     }
     
     
-    @IBAction func addPlayerToDatabase(sender: AnyObject) {
-        var newPlayer: Athlete = createAthleteFromFieldElements()
-    }
+//    @IBAction func addPlayerToDatabase(sender: AnyObject) {
+//        var newPlayer: Athlete = createAthleteFromFieldElements()
+//    }
     
 
     /*
